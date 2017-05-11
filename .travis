@@ -1,0 +1,9 @@
+language: csharp
+solution: CulDeChouette.sln
+before_install:
+ - sudo apt-get install nunit-console
+before_script:
+ - nuget restore CulDeChouette.sln
+after_script:
+ - nunit-console Core.Test/bin/Debug/Core.Test.dll
+
